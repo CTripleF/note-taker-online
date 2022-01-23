@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const notesdb = require('../lib/notes');
+const Note = require('../lib/notes');
 
 router.get('/notes', (req, res) =>{
-  notesdb
+  Note
     .getNotes()
     .then(notes => {
       res.json(notes)
@@ -14,7 +14,7 @@ router.get('/notes', (req, res) =>{
 
 router.post('/notes', (req, res) => {
   console.log(req.body)
-    notesdb
+    Note
       .addNote(req.body)
       .then(note => {
         res.json(note)
@@ -25,10 +25,10 @@ router.post('/notes', (req, res) => {
 });
 
 router.delete('/notes/:id', (req, res) => {
-  notesdb
-      .removeNote(req.params.id)
-      .then(() => res.json({ ok: true }))
-      .catch(err => res.status(500).json(err))
+  Note
+    .deleteNote(req.params.id)
+    .then(() => res.json({ ok: true }))
+    .catch(err => res.status(500).json(err))
 })
 
 module.exports = router;
