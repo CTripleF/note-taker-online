@@ -22,6 +22,7 @@ fill in title and Note description to save
 there are currently no guidelines for contribution on this project
 
 ## Screenshot
+![note_taker](https://user-images.githubusercontent.com/91702886/150813165-751e9730-62dc-4d6d-a8ed-c2023a729a02.PNG)
 
 ## Credits
 Chris F (CTripleF)
